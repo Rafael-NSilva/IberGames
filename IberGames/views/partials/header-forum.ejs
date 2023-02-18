@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/whiteModeForum.css" id="activeTheme" class="light">
+    <script src="/scripts/app.js"></script>
+    <title>IberGames - Forum</title>
+</head>
+<body>
+    <header>
+        <div id="logo_and_buttons">
+            <div id="logoDiv">
+                <a href="/"><img src="" alt="LogoTipo" class="logo"></a>
+            </div>
+            <div id="formAut">
+                <form action="/search" method="get" id="searchForm" name="searchForm">
+                    <input type="text" name="search" id="search" placeholder="Search...">
+                </form>
+                <div id="buttonsDiv">
+                    <a href="/forum" id="homeButton"><img src="" alt="homeButton"></a>
+                    <button id="themeButton" onclick="changeForumPageTheme()"><img></button>
+                    <% if (typeof user == 'undefined'){ %>
+                        <a href="/login" id="loginButton"><img src="" alt="loginButton"></a>
+                    <% } %>
+                    <% if (typeof user != 'undefined'){ %>
+                    <form action="/logout" method="post">
+                        <button type="submit" id="logoutButton"><img></button>
+                    </form>
+                <% } %>
+                </div>
+            </div>
+        </div>
+        <% if (typeof user != 'undefined' && user[0].Regist_gestor == 1){ %>
+        <a href="/user-moderation" id = "user-moderation">Gestão Utilizadores</a>
+        <% } %>
+    </header>

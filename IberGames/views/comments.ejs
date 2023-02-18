@@ -1,0 +1,46 @@
+<%- include("./partials/header-forum") %>
+<main>
+    <a href="/categories/<%= categoria %>" id="Game"><%= jogo.toUpperCase() %></a>
+    <% if (comentarios.length) { %>
+        <% comentarios.forEach(function(comentario) { %>
+        <article id="commentArticle">
+            <div class="comment">
+                <div class="account-info">
+                    <% if(comentario.Criador == null){ %>
+                        Guest
+                    <% } else { %>
+                        <%= comentario.Criador %>
+                    <% }%>
+                </div>
+                <div class="comment-body">
+                    <div class="comment-header">
+                        <%= comentario.Data %>
+                    </div>
+                    <div class="comment-content">
+                        <%= comentario.Conteudo %>
+                    </div>
+                </div>
+            </div>
+            <div class="comment-buttons">
+                <% if(typeof user != 'undefined' && (comentario.Criador == user[0].Regist_name || user[0].Regist_gestor == 1)){ %>
+                    <form action="/delete-comment" method="post">
+                        <input type="hidden" name="username" value="<%= comentario.Criador %>">
+                        <input type="hidden" name="creationDate" value="<%= comentario.Data %>">
+                        <input type="hidden" name="content" value="<%= comentario.Conteudo %>">
+                        <button type="submit" name="btnDelete" class="btnDelete">Delete</button>
+                    </form>
+                <% } %>
+            </div>
+        </article>
+        <% }) %>
+        <div class="newComment">
+            <h3><a href="/new-comment">Adicione um comentário!</a></h3>
+        </div>
+    <% } else { %> 
+        <div class="newComment">
+            <h2>Sem comentários!</h2>
+            <h3><a href="/new-comment">Adicione um comentário!</a></h3>
+        </div>  
+    <% } %>
+</main>
+<%- include("./partials/footer") %>

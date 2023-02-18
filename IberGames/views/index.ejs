@@ -1,0 +1,95 @@
+<%- include("./partials/header-main") %>
+  <main>
+    <div class="container">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+          <li data-target="#myCarousel" data-slide-to="3"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+
+          <div class="item active" onclick="putNewsContent('CyberPunk2077')">
+            <img src="/images/cyberpunkNew.jpg" alt="CyberPunk 2077" class="game-image" style="width:100%;">
+            <div class="carousel-caption">
+              <h3>CyberPunk 2077</h3>
+              <p>Is Now The Right Time To Play it?</p>
+            </div>
+          </div>
+
+          <div class="item" onclick="putNewsContent('Destiny2')">
+            <img src="/images/DestinyWitchQueenNew.jpg" alt="Destiny2: Witch Queen" class="game-image" style="width:100%;">
+            <div class="carousel-caption">
+              <h3>Destiny 2: The Witch Queen</h3>
+              <p>Launch Trailer Welcomes Guardians To Savathûn's Throne World</p>
+            </div>
+          </div>
+
+          <div class="item" onclick="putNewsContent('BaldursGate3')">
+            <img src="/images/Baldur'sGate3New.jpg" alt="Baldur's Gate 3" class="game-image" style="width:100%;">
+            <div class="carousel-caption">
+              <h3>Baldur's Gate 3</h3>
+              <p>Will Likely Be Released In 2023</p>
+            </div>
+          </div>
+
+          <div class="item" onclick="putNewsContent('XenobladeChronicles3')">
+            <img src="/images/XenobladeChronicles3New.jpg" alt="Xenoblade Chronicles 3" class="game-image" style="width:100%;">
+            <div class="carousel-caption">
+              <h3>Xenoblade Chronicles 3</h3>
+              <p>Announced, Releasing This September</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+    <section id="main_content">
+      <article class="news">
+        <img src="/images/mini_cyberpunk.jpg" alt="icon cyberpunk 2077" class="news_image" onclick="putNewsContent('CyberPunk2077')">
+        <h2 class="news_title"> 
+          <a onclick="putNewsContent('CyberPunk2077')">CyberPunk 2077 - Is Now The Right Time To Play it?</a>
+        </h2>
+        <p class="news_body">Cyberpunk 2077 received a massive update earlier this week.</p>
+      </article>
+      <div class="news_dividing_bar"></div>
+      <article class="news">
+        <img src="/images/mini_d2witchqueen.jpg" alt="icon destiny2" class="news_image" onclick="putNewsContent('Destiny2')">
+        <h2 class="news_title">
+          <a onclick="putNewsContent('Destiny2')">Destiny 2: The Witch Queen - Launch Trailer Welcomes Guardians To Savathûn's Throne World</a>
+        </h2>
+        <p class="news_body">Destiny 2: The Witch Queen dlc will be available to play in about a week.</p>
+      </article>
+      <div class="news_dividing_bar"></div>
+      <article class="news">
+        <img src="/images/mini_baldursgate3.jpg" alt="icon baldur's gate 3" class="news_image" onclick="putNewsContent('BaldursGate3')">
+        <h2 class="news_title">
+          <a onclick="putNewsContent('BaldursGate3')">Baldur's Gate 3 - Will Likely Be Released In 2023</a>
+        </h2>
+        <p class="news_body">Baldur's Gate 3 delayed release to 2023.</p>
+      </article>
+      <div class="news_dividing_bar"></div>
+      <article class="news">
+        <img src="/images/mini_xenoblade3.jpg" alt="icon xenoblade chronicles 3" class="news_image" onclick="putNewsContent('XenobladeChronicles3')">
+        <h2 class="news_title">
+          <a onclick="putNewsContent('XenobladeChronicles3')">Xenoblade Chronicles 3 - Announced, Releasing This September</a>
+        </h2>
+        <p class="news_body">Nintendo announced the third game of the franchise Xenoblade Chronicles will be releasing this year in September.</p>
+      </article>
+    </section>
+  </main>
+<%- include("./partials/footer") %>

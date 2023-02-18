@@ -1,0 +1,17 @@
+<%- include("./partials/header-forum") %>
+<main>
+    <form method="post" action="/posts/<%= game %>" class="forms" name="forms">
+        <fieldset>
+            <legend>Escreva um novo comentário</legend>
+            <div class="form-group">
+                <label for="body">Texto do comentário</label>
+                <textarea class="form-control" id="commentBody" name="commentBody"
+                    placeholder="Escreva o seu comentario" maxlength="4000" required></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Postar comentário" class="btnPostar">
+            </div>
+        </fieldset>
+    </form>
+</main>
+<%- include("./partials/footer") %>

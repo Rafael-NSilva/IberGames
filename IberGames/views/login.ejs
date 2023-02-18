@@ -1,0 +1,26 @@
+<%- include("./partials/header-main") %>
+<main id="userForms">
+    <div id="loginBox">
+        <form action="/login/password" method="post" id="loginForm" name="loginForm">
+            <fieldset>
+                <legend>LOGIN TO ACCOUNT</legend>
+                <input type="text" name="loginUsername" id="loginUsername" class="form_item" size="30" placeholder="Username" required/>
+                <input type="password" name="loginPassword" id="loginPassword" class="form_item" size="30" placeholder="Password" required/>
+                <input type="submit" id="btnLogin" class="form_item" name="btnLogin" value="Sign in"/>
+            </fieldset>
+        </form>
+    </div>
+    <div id="registerBox">
+        <form action="/signup" method="post" id="registerForm" name="registerForm">
+            <fieldset>
+                <legend>REGISTER ACCOUNT</legend>
+                <input type="text" name="signUpUsername" id="signUpUsername" class="form_item" size="30" placeholder="Username"/>
+                <input type="text" name="signUpEmail" id="signUpEmail" size="30" class="form_item" placeholder="Email"/>
+                <input type="password" name="signUpPassword" id="signUpPassword" class="form_item" size="30" placeholder="Password"/>
+                <input type="password" name="signUpConfirmPassword" id="signUpConfirmPassword" class="form_item" size="30" placeholder="Confirm Password"/>
+                <input type="submit" id="btnRegister" name="btnRegister" class="form_item" value="Sign up"/>
+            </fieldset>
+        </form>
+    </div>
+</main>
+</body>
